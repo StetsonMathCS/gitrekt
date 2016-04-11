@@ -27,7 +27,7 @@ Report_Template::Report_Template()
 
 Report_Template::~Report_Template()
 {
-    statedName->Wt::WText();
+    statedName->Wt::~WText();
 
     reportHeader->Wt::~WContainerWidget();
 
