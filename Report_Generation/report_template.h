@@ -8,6 +8,7 @@
 
 #include <Wt/WTemplate>
 #include <Wt/WContainerWidget>
+#include <Wt/WText>
 
 #ifndef REPORT_TEMPLATE_H
 #define REPORT_TEMPLATE_H
@@ -19,6 +20,7 @@ class Report_Template
         Wt::WContainerWidget *reportHeader;
         Wt::WContainerWidget *reportNumbers;
         Wt::WContainerWidget *reportGraphs;
+        Wt::WText *statedName;
 
     public:
         Report_Template();

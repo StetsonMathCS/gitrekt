@@ -14,5 +14,14 @@
 
 Report_Generation::Report_Generation()
 {
+    reportTemplate = new Report_Template::Report_Template();
+}
 
+/**
+ * Destructor that deletes the report generated.
+ */
+
+~Report_Generation::~Report_Generation()
+{
+    delete reportTemplate;
 }

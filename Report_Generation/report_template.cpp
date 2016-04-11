@@ -14,33 +14,61 @@
 
 Report_Template::Report_Template()
 {
+    reportTemplate = new Wt::WTemplate();
 
+    createHeaderSection();
+    createNumbersSection();
+    createGraphsSection();
+
+    reportTemplate->Wt::bindWidget("header_section", reportHeader);
+    reportTemplate->Wt::bindWidget("numbers_section", reportNumbers);
+    reportTemplate->Wt::bindWidget("graphs_section", reportGraphs);
 }
 
 /*
- * Destructor. Deletes the template and its containers.
+ * Destructor. Deletes the template, its containers, and everything within its containers.
  */
 
 Report_Template::~Report_Template()
 {
-    reportHeader->~WContainerWidget();
-    reportNumber->~WContainerWidget();
-    reportGraphs->~WContainerWidget();
+    statedName->Wt::~WText();
+
+    reportHeader->Wt::~WContainerWidget();
+
+    reportNumber->Wt::~WContainerWidget();
+
+    reportGraphs->Wt::~WContainerWidget();
     
-    reportTemplate->~WTemplate();
+    reportTemplate->Wt::~WTemplate();
 }
 
-Report_Template::createHeaderSection()
+/**
+ * Creates the header section where the user name shall be.
+ */
+
+void Report_Template::createHeaderSection()
 {
-    reportHeader = new WContainerWidget();
+    reportHeader = new Wt::WContainerWidget();
+
+    statedName = new Wt::WText("Name: ", Wt::PlainText);
+
+    reportHeader->Wt::addWidget(statedName);
 }
 
-Report_Template::createNumbersSection()
+/**
+ * Creates the numbers section where general information and ratios will be.
+ */
+
+void Report_Template::createNumbersSection()
 {
-    reportNumbers = new WContainerWidget();
+    reportNumbers = new Wt::WContainerWidget();
 }
 
-Report_Templte::createGraphsSection()
+/**
+ * Creates the graphs section where the line graph and bar graph will be.
+ */
+
+void Report_Template::createGraphsSection()
 {
-    reportGraphs = new WContainerWidget();
+    reportGraphs = new Wt::WContainerWidget();
 }
