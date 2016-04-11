@@ -21,7 +21,7 @@ Report_Generation::Report_Generation()
  * Destructor that deletes the report generated.
  */
 
-~Report_Generation::~Report_Generation()
+Report_Generation::~Report_Generation()
 {
     delete reportTemplate;
 }

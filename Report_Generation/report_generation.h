@@ -14,7 +14,7 @@
 class Report_Generation
 {   
     private:
-        Report_Template::Report_Template *reportTemplate;
+        Report_Template *reportTemplate;
 
     public:
       Report_Generation();

@@ -28,6 +28,6 @@ class Report_Template
         void createHeaderSection();
         void createNumbersSection();
         void createGraphsSection();
-}
+};
 
 #endif
