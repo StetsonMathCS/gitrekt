@@ -19,6 +19,10 @@ Report_Template::Report_Template()
     createHeaderSection();
     createNumbersSection();
     createGraphsSection();
+
+    reportTemplate->Wt::bindWidget("header_section", reportHeader);
+    reportTemplate->Wt::bindWidget("numbers_section", reportNumbers);
+    reportTemplate->Wt::bindWidget("graphs_section", reportGraphs);
 }
 
 /*
