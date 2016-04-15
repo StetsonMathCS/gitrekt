@@ -15,8 +15,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked() //Analysis button
 {
-    ui->lineEdit->setText("Repository!");
-    ui->lineEdit_2->setText("User!");
+    ui->lineEdit->text();
+    ui->lineEdit_2->setText(ui->lineEdit->text());
+
 }
 
 void MainWindow::on_pushButton_2_clicked() //Generate button
