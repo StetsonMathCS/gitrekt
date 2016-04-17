@@ -76,13 +76,15 @@ int wrapper::getCommitCount(const char* directory, string author)
 	{
 		git_commit *c;
 		git_commit_lookup(&c, repository, &oid);
-		cout << git_commit_committer << endl;;
+		const git_signature *sig = git_commit_author(c);
+		char *name = sig -> name;
+		if(name == author) i++;
 		git_commit_free(c);
 	}	
 
 	//Free the repository, return the value
 	git_repository_free(repository);
-	return 0;
+	return i;
 }
 
 /*
@@ -93,8 +95,7 @@ int main()
 	wrapper *w = new wrapper();
 	const char *directory = "/home/bpearson/csci221/final-project/gitrekt";
 	string author = "bpearson";
-	cout << w->getCommitCount(directory, author);
+	cout << w-> getCommitCount(directory, author);
 	delete w;
-	delete directory;
 	return 0;
 }
