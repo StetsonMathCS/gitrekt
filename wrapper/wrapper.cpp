@@ -11,15 +11,22 @@ wrapper::wrapper()
 }
 
 /**
- * Get the total number of commits in a repository,
- * given a certain directory
+ * Open a repository at a certain directory
  */
-int wrapper::getCommitCount(const char* directory)
-{
-	git_repository *repository = NULL;
-	
+git_repository* openRepository(string directory)
+{	
+	if(git_repository_open(&repository, directory) == 0) return repository;
+	return NULL;
+}
+
+
+/**
+ * Get the total number of commits in the repository
+ */
+int wrapper::getCommitCount(git_repository *repository)
+{	
 	//Repository does not exist; commit count is 0
-	if(git_repository_open(&repository, directory) != 0)
+	if(repository == NULL)
 	{
 		return 0;
 	}
@@ -49,15 +56,13 @@ int wrapper::getCommitCount(const char* directory)
 }
 
 /**
- * Get the total number of commits in a repository,
- * given a directory and an author/email
+ * Get the total number of commits in the repository,
+ * given an author/email
  */
-int wrapper::getCommitCount(const char* directory, string id)
-{
-	git_repository *repository = NULL;
-	
+int wrapper::getCommitCount(git_repository *repository, string id)
+{	
 	//Repository does not exist; commit count is 0
-	if(git_repository_open(&repository, directory) != 0)
+	if(!valid)
 	{
 		return 0;
 	}
@@ -89,16 +94,19 @@ int wrapper::getCommitCount(const char* directory, string id)
 }
 
 /**
- * Get the total number of lines committed to a repository,
- * given a certain directory
+ * Get the total number of lines committed to the repository
  */
-int wrapper::getLinesCommitted(const char *directory)
+int wrapper::getLinesCommitted(git_repository *repository)
 {
-	
+		
 	return 0;
 }
 
-int wrapper::getLinesCommitted(const char *directory, string id)
+/**
+ * Get the total number of lines committed to the repository,
+ * given an author/email
+ */
+int wrapper::getLinesCommitted(git_repository *repository, string id)
 {
 	return 0;
 }
@@ -108,10 +116,10 @@ int wrapper::getLinesCommitted(const char *directory, string id)
  */
 int main()
 {
-	wrapper *w = new wrapper();
 	const char *directory = "/home/bpearson/csci221/final-project/gitrekt";
+	wrapper *w = new wrapper(directory);
 	string author = "bpearson";
-	cout << w-> getCommitCount(directory, author);
+	cout << w-> getCommitCount(author);
 	delete w;
 	return 0;
 }
