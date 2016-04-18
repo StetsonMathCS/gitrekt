@@ -1,0 +1,3 @@
+Standardize input of data:
+
+
