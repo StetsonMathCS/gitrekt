@@ -10,21 +10,21 @@ class wrapper
 
 	public:
 		//Initialize libgit2
-		wrapper();
+		wrapper(const char*);
 
 		//Get the total number of commits
-		int getCommitCount(const char*);
+		int getCommitCount();
 		
 		//Get the total number of commits by 
 		//a certain author or email
-		int getCommitCount(const char*, string);
+		int getCommitCount(string);
 
 		//Get the total number of lines committed	
-		int getLinesCommitted(const char*);
+		int getLinesCommitted();
 
 		//Get the total number of lines committed 
 		//by a certain author or email
-		int getLinesCommitted(const char*, string);
+		int getLinesCommitted(string);
 };
 
 #endif
