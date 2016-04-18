@@ -13,18 +13,18 @@ class wrapper
 		wrapper(const char*);
 
 		//Get the total number of commits
-		int getCommitCount();
+		int getCommitCount(git_repository*);
 		
 		//Get the total number of commits by 
 		//a certain author or email
-		int getCommitCount(string);
+		int getCommitCount(git_repository*, string);
 
 		//Get the total number of lines committed	
-		int getLinesCommitted();
+		int getLinesCommitted(git_repository*);
 
 		//Get the total number of lines committed 
 		//by a certain author or email
-		int getLinesCommitted(string);
+		int getLinesCommitted(git_repository*, string);
 };
 
 #endif
