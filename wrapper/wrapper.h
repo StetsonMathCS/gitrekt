@@ -15,8 +15,16 @@ class wrapper
 		//Get the total number of commits
 		int getCommitCount(const char*);
 		
-		//Get the total number of commits by a certain author
+		//Get the total number of commits by 
+		//a certain author or email
 		int getCommitCount(const char*, string);
+
+		//Get the total number of lines committed	
+		int getLinesCommitted(const char*);
+
+		//Get the total number of lines committed 
+		//by a certain author or email
+		int getLinesCommitted(const char*, string);
 };
 
 #endif

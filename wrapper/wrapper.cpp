@@ -2,7 +2,7 @@
 #include "wrapper.h"
 using namespace std;
 
-/*
+/**
  * Initialize libgit2
  */
 wrapper::wrapper()
@@ -10,7 +10,7 @@ wrapper::wrapper()
 	git_libgit2_init();
 }
 
-/*
+/**
  * Get the total number of commits in a repository,
  * given a certain directory
  */
@@ -50,9 +50,9 @@ int wrapper::getCommitCount(const char* directory)
 
 /**
  * Get the total number of commits in a repository,
- * given a directory and an author
+ * given a directory and an author/email
  */
-int wrapper::getCommitCount(const char* directory, string author)
+int wrapper::getCommitCount(const char* directory, string id)
 {
 	git_repository *repository = NULL;
 	
@@ -78,7 +78,8 @@ int wrapper::getCommitCount(const char* directory, string author)
 		git_commit_lookup(&c, repository, &oid);
 		const git_signature *sig = git_commit_author(c);
 		char *name = sig -> name;
-		if(name == author) i++;
+		char *email = sig -> email;
+		if(name == id || email == id) i++;
 		git_commit_free(c);
 	}	
 
@@ -87,7 +88,22 @@ int wrapper::getCommitCount(const char* directory, string author)
 	return i;
 }
 
-/*
+/**
+ * Get the total number of lines committed to a repository,
+ * given a certain directory
+ */
+int wrapper::getLinesCommitted(const char *directory)
+{
+	
+	return 0;
+}
+
+int wrapper::getLinesCommitted(const char *directory, string id)
+{
+	return 0;
+}
+
+/**
  * Main file purely used to compile the code
  */
 int main()
