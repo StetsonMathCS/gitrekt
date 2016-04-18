@@ -13,8 +13,9 @@ wrapper::wrapper()
 /**
  * Open a repository at a certain directory
  */
-git_repository* openRepository(string directory)
+git_repository* openRepository(const char* directory)
 {	
+    git_repository* repository;
 	if(git_repository_open(&repository, directory) == 0) return repository;
 	return NULL;
 }
@@ -59,10 +60,10 @@ int wrapper::getCommitCount(git_repository *repository)
  * Get the total number of commits in the repository,
  * given an author/email
  */
-int wrapper::getCommitCount(git_repository *repository, string id)
+int wrapper::getCommitCount(git_repository *repository, const char* id)
 {	
 	//Repository does not exist; commit count is 0
-	if(!valid)
+	if(!repository)
 	{
 		return 0;
 	}
@@ -106,7 +107,7 @@ int wrapper::getLinesCommitted(git_repository *repository)
  * Get the total number of lines committed to the repository,
  * given an author/email
  */
-int wrapper::getLinesCommitted(git_repository *repository, string id)
+int wrapper::getLinesCommitted(git_repository *repository, const char* id)
 {
 	return 0;
 }
@@ -117,9 +118,10 @@ int wrapper::getLinesCommitted(git_repository *repository, string id)
 int main()
 {
 	const char *directory = "/home/bpearson/csci221/final-project/gitrekt";
-	wrapper *w = new wrapper(directory);
-	string author = "bpearson";
-	cout << w-> getCommitCount(author);
+	wrapper *w = new wrapper();
+    const char* author = "bpearson";
+    git_repository* repo = w->openRepository(directory);
+	cout << w->getCommitCount(repo, author);
 	delete w;
 	return 0;
 }
