@@ -5,23 +5,68 @@
  *
  * Author: Acacia Zack
  */
-
+ 
+#include <iostream>
+#include <fstream>
 #include "report_generation.h"
+
+using namespace std;
 
 /*
  * Constructor
  */
 
-Report_Generation::Report_Generation()
+Report_Generation::Report_Generation(string userName, int numberOfCommit, int linesOfCodes, int linesThatAreComments, int linesThatAreCode)
 {
-    reportTemplate = new Report_Template::Report_Template();
+	myUserName=userName;
+	myNumberOfCommit=numberOfCommit;
+	myLinesOfCodes=linesOfCodes;
+	myLinesThatAreComments=linesThatAreComments;
+	myLinesThatAreCode= linesThatAreCode;
+    
 }
 
-/**
- * Destructor that deletes the report generated.
- */
+int main() {
+	return 0;
 
-Report_Generation::~Report_Generation()
-{
-    delete reportTemplate;
+
+
+
+
 }
+
+void areaChat() {
+
+
+
+
+}
+
+void barGraph() {
+
+
+
+}
+
+
+void lineGraph() {
+
+
+
+}
+
+void piechart() {
+
+
+
+}
+
+
+void table() {
+
+
+
+
+}
+
+
