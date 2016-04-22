@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "wrapper/wrapper.h"
+#include "wrapper.h"
 #include "global.h"
 
 MainWindow::MainWindow(QWidget *parent) :

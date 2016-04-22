@@ -14,10 +14,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    wrapper/wrapper.cpp
+    wrapper.cpp
 
 HEADERS  += mainwindow.h \
-    wrapper/wrapper.h \
+    wrapper.h \
     global.h
 
 FORMS    += mainwindow.ui
