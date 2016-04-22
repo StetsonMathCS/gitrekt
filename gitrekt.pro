@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     wrapper/wrapper.cpp
 
 HEADERS  += mainwindow.h \
-    wrapper/wrapper.h
+    wrapper/wrapper.h \
+    global.h
 
 FORMS    += mainwindow.ui
