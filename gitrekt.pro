@@ -18,6 +18,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     wrapper.h \
-    global.h
+    global.h \
+    git2.h
 
 FORMS    += mainwindow.ui
