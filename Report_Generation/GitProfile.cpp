@@ -25,7 +25,27 @@ std::string GitProfile::getCommitsPerBranch(std::string branch)
 
 }
 
+int GitProfile::getBrokeTestCaseCommitsPerBranch(std::string branch)
+{
+
+}
+
+int GitProfile::getBrokeTestCaseCommitsPerBranch(std::string branch)
+{
+
+}
+
+int GitProfile::getBrokenCommitsPerBranch(std::string branch)
+{
+
+}
+
 int GitProfile::getDumpsOfCodePerBranch(std::string branch)
+{
+
+}
+
+std::string getTimePerCommit(std::string commit)
 {
 
 }
