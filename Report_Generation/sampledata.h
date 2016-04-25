@@ -1,18 +1,14 @@
 #include <string>
 
-#ifndef GITPROFILE_H
-#define GITPROFILE_H
+#ifndef SAMPLEDATA_H
+#define SAMPLEDATA_H
 
-class GitProfile
+class sampledata
 {
-    private:
-        std::string gitUser;
-
     public:
-        GitProfile(std::string user);
-        std::string getBranches();
-        std::string getBranchesCreated();
-        std::string getBranchesDeleted();
+        std::string getBranches(std::string user);
+        std::string getBranchesCreated(std::string user);
+        std::string getBranchesDeleted(std::string user);
         std::string getCommitsPerBranch(std::string branch);
         int getBrokeBuildCommitsPerBranch(std::string branch);
         int getBrokeTestCaseCommitsPerBranch(std::string branch);
