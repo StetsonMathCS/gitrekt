@@ -50,7 +50,11 @@ void areaChart() {
 void barGraph() {
 	ofstream outputFile("bargraph.html");
 	//outputFile.open("index.html");
-	string output = "<HTML>\n <HEAD>\n <title>Test HTML PAGE</title></head>\n<body>\n <h1>Testing output HTML file</h1></body></HTML>";
+	string output = "<html>\n<head>\n<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\n<script type=\"text/javascript\">\ngoogle.charts.load('current', {packages: ['corechart', 'bar']});\ngoogle.charts.setOnLoadCallback(drawTopX);\n\nfunction drawTopX() {\nvar data = new google.visualization.DataTable();\ndata.addColumn('number', 'Commit Number');\ndata.addColumn('number', 'Lines of code');\ndata.addColumn('number', 'Comments');\n\ndata.addRows([\n[1, 40, 10],\n[2, 20, 15],\n[3, 75, 5],\n[4, 150, 40],\n[5, 60, 20],\n[6, 200, 58],\n[7, 300, 75],\n[8, 288, 80],\n[9, 250, 100],\n[10, 290, 120],\n]);\n\nvar options = {\nchart: {\ntitle: 'Title',\nsubtitle: 'Subtitle'\n},\naxes: {\nx: {\n0: {side: 'top'}\n}\n},\nhAxis: {\ntitle: 'Commits',\nviewWindow: {\nmin: [7, 30, 0],\nmax: [17, 30, 0]\n}\n},\nvAxis: {\ntitle: 'Lines of code'\n}\n};\n\nvar material = new google.charts.Bar(document.getElementById('chart_div'));\nmaterial.draw(data, options);\n}\n</script>\n</head>\n<body>\n<div id=\"chart_div\"></div>\n</body>\n</html>";
+
+
+
+
 	outputFile << output;
 	
 	outputFile.close();

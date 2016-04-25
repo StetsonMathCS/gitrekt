@@ -1,5 +1,57 @@
-<HTML>
- <HEAD>
- <title>Test HTML PAGE</title></head>
+<html>
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawTopX);
+
+function drawTopX() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Commit Number');
+data.addColumn('number', 'Lines of code');
+data.addColumn('number', 'Comments');
+
+data.addRows([
+[1, 40, 10],
+[2, 20, 15],
+[3, 75, 5],
+[4, 150, 40],
+[5, 60, 20],
+[6, 200, 58],
+[7, 300, 75],
+[8, 288, 80],
+[9, 250, 100],
+[10, 290, 120],
+]);
+
+var options = {
+chart: {
+title: 'Title',
+subtitle: 'Subtitle'
+},
+axes: {
+x: {
+0: {side: 'top'}
+}
+},
+hAxis: {
+title: 'Commits',
+viewWindow: {
+min: [7, 30, 0],
+max: [17, 30, 0]
+}
+},
+vAxis: {
+title: 'Lines of code'
+}
+};
+
+var material = new google.charts.Bar(document.getElementById('chart_div'));
+material.draw(data, options);
+}
+</script>
+</head>
 <body>
- <h1>Testing output HTML file</h1></body></HTML>
+<div id="chart_div"></div>
+</body>
+</html>
