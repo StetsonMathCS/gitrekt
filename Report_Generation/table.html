@@ -1,5 +1,29 @@
-<HTML>
- <HEAD>
- <title>Test HTML PAGE</title></head>
+<html>
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['table']});
+google.charts.setOnLoadCallback(drawTable);
+
+function drawTable() {
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'User Name');
+data.addColumn('number', 'Lines of Code');
+data.addColumn('number', 'Percent of Code');
+data.addRows([
+['User1',  150, {v: 55 , f: '55%'}],
+['User2',   5, {v: 2, f: '2%'}],
+['User3', 80, {v: 30, f: '30%'}],
+['User4',   40, {v: 15,  f: '15%'}]
+]);
+
+var table = new google.visualization.Table(document.getElementById('table_div'));
+
+table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+}
+</script>
+</head>
 <body>
- <h1>Testing output HTML file</h1></body></HTML>
+<div id="table_div"></div>
+</body>
+</html>
