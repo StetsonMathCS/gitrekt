@@ -18,7 +18,9 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     wrapper.h \
-    git2.h \
+    global.h
+
+INCLUDEPATH = git2
 
 
 

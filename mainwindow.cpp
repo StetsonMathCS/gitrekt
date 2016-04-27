@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked() //Analysis button
 {
     ui->lineEdit->text();
-    repo = openRpository(ui->lineEdit->text());
+    repo = wrap->openRepository(ui->lineEdit->text().toStdString().c_str());
     ui->lineEdit_2->setText(ui->lineEdit->text());
 
 }
