@@ -12,8 +12,8 @@
 #define REPORT_GENERATION_H
 
 #include <iostream>
-
-#include "report_generation.h"
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -23,24 +23,22 @@ class Report_Generation
         //Report_Template *reportTemplate;
 
     public:
-    string myUserName;
-    string myNumberOfCommit; 
-    int myLinesOfCodes;
-    int myLinesThatAreComments; 
-    int myLinesThatAreCode;
-    void areaChat();
-
-void barGraph();
-
-
-void lineGraph();
-
-void piechart();
-
-
-void table();
+    vector<int> myNumberOfCommit; 
+    vector<int> myLinesOfCodes;
+    vector<int> myLinesThatAreComments; 
+    vector<int> myLinesThatAreCode;
+    vector<string> myUserNames;
     
-    Report_Generation(string userName, int numberOfCommit, int linesOfCodes, int linesThatAreComments, int linesThatAreCode);
+    //not a vector
+    int myNumberOfUsers; 
+    
+    void areaChart();
+	void barGraph();
+	void lineGraph();
+	void piechart();
+	void table();
+    
+    Report_Generation(vector<string> userNames, int numberOfUsers, vector <int> numberOfCommit, vector <int> linesOfCodes, vector <int> linesThatAreComments, vector <int> linesThatAreCode);
     
     
     
