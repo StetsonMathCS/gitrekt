@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 #ifndef SAMPLEDATA_H
 #define SAMPLEDATA_H
@@ -6,10 +7,10 @@
 class sampledata
 {
     public:
-        std::string getBranches(std::string user);
-        std::string getBranchesCreated(std::string user);
-        std::string getBranchesDeleted(std::string user);
-        std::string getCommitsPerBranch(std::string branch);
+        std::vector<std::string> getBranches(std::string user);
+        std::vector<std::string> getBranchesCreated(std::string user);
+        std::vector<std:string> getBranchesDeleted(std::string user);
+        std::vector<std::string> getCommitsPerBranch(std::string branch);
         int getBrokeBuildCommitsPerBranch(std::string branch);
         int getBrokeTestCaseCommitsPerBranch(std::string branch);
         int getBrokenCommitsPerBranch(std::string branch);
