@@ -11,7 +11,7 @@ GitProfile::GitProfile(std::string user)
 std::vector<std::string> GitProfile::getBranches()
 {
     std::vector<std::string> branches;
-    branches.push_back(sampledata::getBranches("azack"));
+    branches = sampledata::getBranches("azack");
     
     return branches;
 }
@@ -19,7 +19,7 @@ std::vector<std::string> GitProfile::getBranches()
 std::vector<std::string> GitProfile::getBranchesCreated()
 {
     std::vector<std::string> branches;
-    branches.push_back(sampledata::getBranchesCreated("azack"));
+    branches = sampledata::getBranchesCreated("azack");
 
     return branches;
 }
@@ -27,7 +27,7 @@ std::vector<std::string> GitProfile::getBranchesCreated()
 std::vector<std::string> GitProfile::getBranchesDeleted()
 {
     std::vector<std::string> branches;
-    branches.push_back(sampledata::getBranchesDeleted("azack"));
+    branches = sampledata::getBranchesDeleted("azack");
 
     return branches;
 }
@@ -35,7 +35,7 @@ std::vector<std::string> GitProfile::getBranchesDeleted()
 std::vector<std::string> GitProfile::getCommitsPerBranch(std::string branch)
 {
     std::vector<std::string> commits;
-    commits.push_back(sampledata::getCommitsPerBranch("report_generation"));
+    commits = sampledata::getCommitsPerBranch("report_generation");
 
     return commits;
 }
