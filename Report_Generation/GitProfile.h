@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 #ifndef GITPROFILE_H
 #define GITPROFILE_H
@@ -10,10 +11,10 @@ class GitProfile
 
     public:
         GitProfile(std::string user);
-        std::string getBranches();
-        std::string getBranchesCreated();
-        std::string getBranchesDeleted();
-        std::string getCommitsPerBranch(std::string branch);
+        std::vector<std::string> getBranches();
+        std::vector<std::string> getBranchesCreated();
+        std::vector<std::string> getBranchesDeleted();
+        std::vector<std::string> getCommitsPerBranch(std::string branch);
         int getBrokeBuildCommitsPerBranch(std::string branch);
         int getBrokeTestCaseCommitsPerBranch(std::string branch);
         int getBrokenCommitsPerBranch(std::string branch);

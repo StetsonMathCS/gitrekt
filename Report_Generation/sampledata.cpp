@@ -1,62 +1,60 @@
 #include <iostream>
 
-std::string sampledata::getBranches(std::string user)
+std::vector<std::string> sampledata::getBranches(std::string user)
 {
+    std::vector<std::string> branches;
+
     if(user == "azack")
     {
-        std::string branches = new std::string[3];
-        branches[0] = "report_generation";
-        branches[1] = "html";
-        branches[2] = "git_profile";
-
-        return branches; 
+        branches.push_back("report_generation");
+        branches.push_back("html");
+        branches.push_back("git_profile");
     }
 
-    return " ";
+    return branches;
 }
 
-std::string sampledata::getBranchesCreated(std::string user)
+std::vector<std::string> sampledata::getBranchesCreated(std::string user)
 {
+    std::vector<std::string> branches;
+
     if(user == "azack")
     {
-        std::string branches = new std::string[5];
-        branches[0] = "report_generation";
-        branches[1] = "wt";
-        branches[2] = "html";
-        branches[3] = "data";
-        branches[4] = "git_profile";
-
-        return branches;
+        branches.push_back("report_generation");
+        branches.push_back("wt");
+        branches.push_back("html");
+        branches.push_back("data");
+        branches.push_back("git_profile");
     }
 
-    return " ";
+    return branches;
 }
 
-std::string sampledata::getBranchesDeleted(std::string user)
+std::vector<std::string> sampledata::getBranchesDeleted(std::string user)
 {
+    std::vector<std::string> branches;
+
     if(user == "azack")
     {
-        std::string branches = new std::string[2];
-        branches[0] = "wt";
-        branches[1] = "data";
-
-        return branches;
+        branches.push_back("wt");
+        branches.push_back("data");
     }
 
-    return " ";
+    return branches;
 }
 
-std::string sampledata::getCommitsPerBranch(std::string branch)
+std::vector<std::string> sampledata::getCommitsPerBranch(std::string branch)
 {
+    std::vector<std::string> commits;
+
     if(branch == "report_generation")
     {
-        std::string commits = new std::string[3];
-        commits[0] = "af1e634"
-        commits[1] = "85fefde";
-        commits[2] = "5d4c687";
+        commits.push_back("af1e634");
+        commits.push_back("85fefde");
+        commits.push_back("5d4c687");
     }
 
-    return " ";
+    return commits;
 }
 
 int sampledata::getBrokeBuildCommitsPerBranch(std::string branch)

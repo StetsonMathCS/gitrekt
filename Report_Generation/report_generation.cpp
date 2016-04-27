@@ -3,7 +3,7 @@
  *
  * Description: The cpp file that executes the report generation. Basically the main file of Report Generation.
  *
- * Author: Acacia Zack
+ * Author: Acacia Zack, Andrew Sheridan, Andrew Tomkins
  */
  
 #include <iostream>

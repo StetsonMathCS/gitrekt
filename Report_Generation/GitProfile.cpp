@@ -8,30 +8,34 @@ GitProfile::GitProfile(std::string user)
     gitUser = user;
 }
 
-std::string GitProfile::getBranches()
+std::vector<std::string> GitProfile::getBranches()
 {
-    std::string *branches = sampledata::getBranches("azack");
+    std::vector<std::string> branches;
+    branches = sampledata::getBranches("azack");
     
     return branches;
 }
 
-std::string GitProfile::getBranchesCreated()
+std::vector<std::string> GitProfile::getBranchesCreated()
 {
-    std::string *branches = sampledata::getBranchesCreated("azack");
+    std::vector<std::string> branches;
+    branches = sampledata::getBranchesCreated("azack");
 
     return branches;
 }
 
-std::string GitProfile::getBranchesDeleted()
+std::vector<std::string> GitProfile::getBranchesDeleted()
 {
-    std::string *branches = sampledata::getBranchesDeleted("azack");
+    std::vector<std::string> branches;
+    branches = sampledata::getBranchesDeleted("azack");
 
     return branches;
 }
 
-std::string GitProfile::getCommitsPerBranch(std::string branch)
+std::vector<std::string> GitProfile::getCommitsPerBranch(std::string branch)
 {
-    std::string *commits = sampledata::getCommitsPerBranch("report_generation");
+    std::vector<std::string> commits;
+    commits = sampledata::getCommitsPerBranch("report_generation");
 
     return commits;
 }
