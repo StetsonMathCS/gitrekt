@@ -20,4 +20,15 @@ HEADERS  += mainwindow.h \
     wrapper/wrapper.h \
     global.h
 
+=======
+    wrapper.cpp
+
+HEADERS  += mainwindow.h \
+    wrapper.h \
+    global.h
+
+INCLUDEPATH = git2
+
+
+
 FORMS    += mainwindow.ui
